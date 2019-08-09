@@ -18,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.Optional;
 import org.springframework.validation.BindingResult;
 
@@ -43,8 +44,10 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping(path = "/get-all-users")
-    public @ResponseBody
-    ResponseEntity<Iterable> getAllUsers() {
+    public
+    ResponseEntity<Iterable> getAllUsers(Principal principal) {
+
+        System.out.println("xxxxxxxxxx= " +principal.getName());
         Iterable<UserModel> users = userRepository.findAll();
         return ResponseEntity.ok(users);
     }
