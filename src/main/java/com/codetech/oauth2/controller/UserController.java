@@ -44,10 +44,11 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping(path = "/get-all-users")
+    //@CrossOrigin(origins = "http://localhost:3000")
     public
     ResponseEntity<Iterable> getAllUsers(Principal principal) {
 
-        System.out.println("xxxxxxxxxx= " +principal.getName());
+        //System.out.println("xxxxxxxxxx= " +principal.getName());
         Iterable<UserModel> users = userRepository.findAll();
         return ResponseEntity.ok(users);
     }

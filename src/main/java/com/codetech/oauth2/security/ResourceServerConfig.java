@@ -22,10 +22,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/user-service/register").permitAll()
+                //.antMatchers("/user-service/get-all-users").permitAll()
                 .antMatchers("/**").authenticated().and().logout().logoutUrl("/oauth/logout").invalidateHttpSession(true)
                 .clearAuthentication(true).logoutSuccessUrl("/").and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .csrf().disable();
+              //  .headers().frameOptions().sameOrigin().and()
+                .csrf().disable(); //.and().cors()
     }
 }
