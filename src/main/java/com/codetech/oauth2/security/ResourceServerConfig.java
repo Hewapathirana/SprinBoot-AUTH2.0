@@ -16,10 +16,14 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
+    //aded by dasitha on 18/8/2109
+    @Autowired
+    private JwtAuthenticationEntryPoint unauthorizedHandler;
+
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http
+        http    //.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .authorizeRequests()
                 .antMatchers("/user-service/register").permitAll()
                 //.antMatchers("/user-service/get-all-users").permitAll()

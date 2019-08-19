@@ -38,7 +38,7 @@ public class UserService {
         minUserInfo.setUsername(userModel.getUsername());
         AuthResponse authResponse = new AuthResponse();
         authResponse.setUserModel(minUserInfo);
-        authResponse.setRole("USER");
+        authResponse.setRole("ADMIN");
         return authResponse;
     }
 

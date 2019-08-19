@@ -8,6 +8,7 @@ import com.codetech.oauth2.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -44,7 +45,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping(path = "/get-all-users")
-    //@CrossOrigin(origins = "http://localhost:3000")
+    @PreAuthorize("hasAuthority('USER')")
     public
     ResponseEntity<Iterable> getAllUsers(Principal principal) {
 

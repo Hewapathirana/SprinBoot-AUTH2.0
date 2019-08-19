@@ -1,7 +1,7 @@
 package com.codetech.oauth2.exceptions;
 
 public class InvalidLoginResponse extends RuntimeException{
-   /* private String username;
+    private String username;
     private String password;
     private String status;
 
@@ -41,7 +41,6 @@ public class InvalidLoginResponse extends RuntimeException{
     }
 
 
-*/
 
 }
 
