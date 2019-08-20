@@ -45,7 +45,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @GetMapping(path = "/get-all-users")
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public
     ResponseEntity<Iterable> getAllUsers(Principal principal) {
 

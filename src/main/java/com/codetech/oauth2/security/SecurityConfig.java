@@ -92,7 +92,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // defaultTokenServices.setClientDetailsService(clientDetailsService);
         defaultTokenServices.setTokenEnhancer(tokenEnhancerChain());
         defaultTokenServices.setSupportRefreshToken(true);
-        defaultTokenServices.setAccessTokenValiditySeconds(30);
+        defaultTokenServices.setAccessTokenValiditySeconds(300000000);
         defaultTokenServices.setRefreshTokenValiditySeconds(100000000);
         return defaultTokenServices;
     }

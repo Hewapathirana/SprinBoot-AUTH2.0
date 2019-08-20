@@ -26,7 +26,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         http    //.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .authorizeRequests()
                 .antMatchers("/user-service/register").permitAll()
-                //.antMatchers("/user-service/get-all-users").permitAll()
+              //  .antMatchers("/test/test/welcome").permitAll()
                 .antMatchers("/**").authenticated().and().logout().logoutUrl("/oauth/logout").invalidateHttpSession(true)
                 .clearAuthentication(true).logoutSuccessUrl("/").and()
                 .sessionManagement()
